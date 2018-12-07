@@ -175,7 +175,12 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
-
+  var color = prompt("Enter x-coordinate");
+  var canvas2 = document.getElementById("canvas3");
+  var text3 = canvas1.getContext("2d");
+  text3.fillRect(10, 10, 100, 50);
+  text3.fillStyle="#FF0000"
+  text3.stroke();
 }
 
 /*
