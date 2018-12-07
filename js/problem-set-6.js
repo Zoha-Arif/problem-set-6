@@ -141,6 +141,11 @@ function drawRectangle() {
         }
       }
 
+      var canvas1 = document.getElementById("canvas2");
+      var text2 = canvas1.getContext("2d");
+      text2.rect(x_coordinate, y_coordinate, width, height);
+      text2.stroke();
+
 
 }
 
