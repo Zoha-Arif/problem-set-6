@@ -11,7 +11,18 @@
  */
 
 function sayHello() {
-
+  var canvas = document.getElementById("canvas1");
+  var text = canvas.getContext("2d");
+  text.font = "48px sans-serif";
+  text.fillStyle = 'black';
+  //https://www.w3schools.com/howto/howto_js_typewriter.asp
+  //The fillText() method draws filled text on the canvas. The default color of the text is black.
+  //object.fillText(text, x, y, maxWidth)
+  // text = Specifies the text that will be written on the canvas
+  // x = The x coordinate where to start painting the text (relative to the canvas)	in pixels
+// y = The y coordinate where to start painting the text (relative to the canvas) in pixels
+//maxWidth = Optional. The maximum allowed width of the text, in pixels
+  text.strokeText("Hello, World!", 10, 50);
 }
 
 /*
