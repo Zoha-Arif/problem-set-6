@@ -21,7 +21,7 @@ function sayHello() {
   // text = Specifies the text that will be written on the canvas
   // x = The x coordinate where to start painting the text (relative to the canvas)	in pixels
 // y = The y coordinate where to start painting the text (relative to the canvas) in pixels
-//maxWidth = Optional. The maximum allowed width of the text, in pixels
+//maxWidth = Optional. The maximum allowed width of the text, in pixels.
   text.strokeText("Hello, World!", 10, 50);
 }
 
@@ -49,6 +49,98 @@ function sayHello() {
  */
 
 function drawRectangle() {
+  var height = prompt("Enter height");
+
+  height = Number(height);
+  if (Number.isInteger(height) == false) {
+    while (Number.isInteger(height) == false){
+      var input1 = prompt("That's not a number! Enter a number:");
+      height = input1;
+      height = Number(height);
+    }
+    }
+
+  height = Number(height);
+  if (1 < height) {
+  }
+
+  else {
+    while (height < 1) {
+      var input2 = prompt("Enter a number higher than 1:");
+      height = input2;
+      height = Number(height);
+    }
+  }
+
+  var width = prompt("Enter width");
+
+  width = Number(width);
+  if (Number.isInteger(width) == false) {
+    while (Number.isInteger(width) == false){
+      var input3 = prompt("That's not a number! Enter a number:");
+      width = input3;
+      width = Number(width);
+    }
+    }
+
+  width = Number(width);
+  if (1 < width) {
+  }
+
+  else {
+    while (width < 1) {
+      var input4 = prompt("Enter a number higher than 1:");
+      width = input4;
+      width = Number(width);
+    }
+  }
+
+  var x_coordinate = prompt("Enter x-coordinate");
+
+    x_coordinate = Number(x_coordinate);
+    if (Number.isInteger(x_coordinate) == false) {
+      while (Number.isInteger(x_coordinate) == false){
+        var input6 = prompt("That's not a number! Enter a number:");
+        x_coordinate = input6;
+        x_coordinate = Number(x_coordinate);
+      }
+      }
+
+  console.log("5");
+    x_coordinate = Number(x_coordinate);
+    if (5 <= x_coordinate) {
+    }
+
+    else {
+      while (x_coordinate <= 5) {
+        var input8 = prompt("Enter a number higher than or equal to 5:");
+        x_coordinate = input8;
+        x_coordinate = Number(x_coordinate);
+      }
+    }
+
+    var y_coordinate = prompt("Enter y-coordinate");
+      y_coordinate = Number(y_coordinate);
+      if (Number.isInteger(y_coordinate) == false) {
+        while (Number.isInteger(y_coordinate) == false){
+          var input9 = prompt("That's not a number! Enter a number:");
+          y_coordinate = input9;
+          y_coordinate = Number(y_coordinate);
+        }
+        }
+
+      y_coordinate = Number(y_coordinate);
+      if (5 <= y_coordinate) {
+      }
+
+      else {
+        while (y_coordinate <= 5) {
+          var input3 = prompt("Enter a number higher than or equal to 5:");
+          y_coordinate = input3;
+          y_coordinate = Number(y_coordinate);
+        }
+      }
+
 
 }
 
