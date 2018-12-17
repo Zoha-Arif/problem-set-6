@@ -13,6 +13,7 @@
 function sayHello() {
   var canvas = document.getElementById("canvas1");
   var text = canvas.getContext("2d");
+  text.clearRect(0, 0, canvas1.width, canvas1.height);
   text.font = "48px sans-serif";
   text.fillStyle = 'black';
   //https://www.w3schools.com/howto/howto_js_typewriter.asp
@@ -49,6 +50,9 @@ function sayHello() {
  */
 
 function drawRectangle() {
+  var canvas2 = document.getElementById("canvas2");
+  var text2 = canvas4.getContext("2d");
+  text2.clearRect(0, 0, canvas2.width, canvas2.height);
   var height = prompt("Enter height");
 
   height = Number(height);
@@ -112,7 +116,7 @@ function drawRectangle() {
     }
 
     else {
-      while (x_coordinate <= 5) {
+      while (x_coordinate < 5) {
         var input8 = prompt("Enter a number higher than or equal to 5:");
         x_coordinate = input8;
         x_coordinate = Number(x_coordinate);
@@ -134,7 +138,7 @@ function drawRectangle() {
       }
 
       else {
-        while (y_coordinate <= 5) {
+        while (y_coordinate < 5) {
           var input3 = prompt("Enter a number higher than or equal to 5:");
           y_coordinate = input3;
           y_coordinate = Number(y_coordinate);
@@ -175,12 +179,54 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
-  var color = prompt("Enter x-coordinate");
-  var canvas2 = document.getElementById("canvas3");
-  var text3 = canvas1.getContext("2d");
-  text3.fillRect(10, 10, 100, 50);
-  text3.fillStyle="#FF0000"
-  text3.stroke();
+  var canvas3 = document.getElementById("canvas3");
+  var text3 = canvas3.getContext("2d");
+  text3.clearRect(0, 0, canvas3.width, canvas3.height);
+  var color = prompt("What color would you like your rectangle to be?");
+  color = color.toLowerCase();
+  console.log(color);
+  console.log(typeof color);
+  console.log(typeof "black");
+  let value = -1;
+  if (!(color == "black" || color == "blue" || color == "green" || color == "orange" || color == "purple" || color == "red" || color == "yellow")) {
+    alert(`${color} is not a supported color.`);
+  }
+  else {
+    var canvas3 = document.getElementById("canvas3");
+    var text3 = canvas3.getContext("2d");
+    text3.fillStyle = color;
+    text3.fillRect(10, 10, 100, 50);
+    text3.stroke();
+  }
+  /*context.rect(x,y,width,height);
+  Use .fill and .stroke to actually draw the rectangle
+The fillRect() method draws a "filled" rectangle. The default color of the fill is black.
+Use the fillStyle property to set a color, gradient, or pattern used to fill the drawing.
+Before, the or was also resolving to true because if color is not black, then it's not blue.
+while (value < 0) {
+  color = prompt("Unrecognizable Color! What color would you like your rectangle to be?");
+  if (!(color == "black" || color == "blue" || color == "green" || color == "orange" || color == "purple" || color == "red" || color == "yellow")){
+    value = -1;
+  }
+  else {
+    value = 0;
+  }
+}
+if (color != black || color != blue)
+Think about it then you'll understand.
+
+The canvas element allows you to programatically place pixels on the screen. It does all of this by expecting you to specify simple (and often tedious) draw commands that mimic
+ the path a pen would take on a piece of paper.
+
+ The HTML5 <canvas> tag is used to draw graphics, on the fly, via scripting (usually JavaScript).
+ However, the <canvas> element has no drawing abilities of its own (it is only a container for graphics) -
+  you must use a script to actually draw the graphics.
+ The getContext() method returns an object that provides methods and properties for drawing on the canvas.
+
+
+*/
+
+
 }
 
 /*
@@ -213,7 +259,53 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
+  var canvas4 = document.getElementById("canvas4");
+  var text4 = canvas4.getContext("2d");
+  text4.clearRect(0, 0, canvas4.width, canvas4.height);
+  var side1 = prompt("You are going to draw a right triangle. Enter length of side 1:");
+  var side2 = prompt("Enter length of side 2:");
+  var side3 = prompt("Enter length of side 3:");
+  /*Math.pow(base, exponent)*/
+  var sidearray = [side1, side2, side3];
+  var shortest = Math.min.apply(null, sidearray);
+  var largest = Math.max.apply(null, sidearray);
+  var slargest;
+  for (var i = 0; i < sidearray.length; i++){
+    if (sidearray[i] == sidearray[0]){
+    }
+    else if ((sidearray[i] == shortest) || (sidearray[i] == largest)) {
+    }
+    else {
+      slargest = sidearray[i];
+    }
+  }
 
+  var side1sq = Math.pow(shortest, 2);
+  var side2sq = Math.pow(slargest, 2);
+  var side3sq = Math.pow(largest, 2);
+  var sqsum = side1sq + side2sq;
+
+  if (sqsum != side3sq){
+    alert("That is not a valid right triangle");
+  }
+
+  else if ((largest > canvas4.width) || (shortest > canvas4.height) || (slargest > canvas4.width)){
+    alert("The triangle will not fit on the canvas.");
+  }
+
+  else {
+    var canvas4 = document.getElementById("canvas4");
+    var text4 = canvas4.getContext("2d");
+    text4.clearRect(0, 0, canvas4.width, canvas4.height);
+    text4.beginPath();
+    text4.moveTo(10, 10);
+    text4.lineTo(10, shortest);
+    text4.lineTo(slargest, shortest);
+    text4.moveTo(10, 10);
+    text4.lineTo(slargest, shortest);
+    /* text4.closePath(); */
+    text4.stroke();
+  }
 }
 
 /*
@@ -236,6 +328,14 @@ function drawTriangle() {
  */
 
 function drawSmileyFace() {
+  var canvas5 = document.getElementById("canvas5");
+  var text5 = canvas4.getContext("2d");
+  text5.clearRect(0, 0, canvas5.width, canvas5.height);
+  context.beginPath();
+      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false); 
+      context.lineWidth = 5;
+      context.strokeStyle = '#003300';
+      context.stroke();
 
 }
 
