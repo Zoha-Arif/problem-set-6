@@ -329,13 +329,28 @@ function drawTriangle() {
 
 function drawSmileyFace() {
   var canvas5 = document.getElementById("canvas5");
-  var text5 = canvas4.getContext("2d");
+  var text5 = canvas5.getContext("2d");
   text5.clearRect(0, 0, canvas5.width, canvas5.height);
-  context.beginPath();
-      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false); 
-      context.lineWidth = 5;
-      context.strokeStyle = '#003300';
-      context.stroke();
+
+  var radius = prompt("Enter radius:");
+
+  var eyes = (Number(radius) * 0.10);
+  var eyes_position1 = radius;
+  var eyes_position2 = radius + 20;
+  text5.beginPath();
+  text5.arc(radius, radius, radius, 0, 2 * Math.PI, false);
+  text5.closePath();
+  text5.stroke();
+
+  text5.beginPath();
+  text5.arc(eyes_position1, eyes_position1, eyes, 0, 2 * Math.PI, false);
+  text5.closePath();
+  text5.stroke();
+
+  text5.beginPath();
+  text5.arc(eyes_position2, eyes_position2, eyes, 0, 2 * Math.PI, false);
+  text5.closePath();
+  text5.stroke();
 
 }
 
