@@ -335,8 +335,13 @@ function drawSmileyFace() {
   var radius = prompt("Enter radius:");
 
   var eyes = (Number(radius) * 0.10);
-  var eyes_position1 = radius;
-  var eyes_position2 = radius + 20;
+  var eyes_position1 = radius * 0.60;
+  var eyes_position2 = radius * 1.35;
+  var smile_position = radius * 0.97;
+  var smile_radius = radius * 0.70;
+  var smile_position1 = smile_position * 2.90;
+  var smile_position2 = smile_position * 2.35; /* Below one = sad face. Above 1 = happy face */
+
   text5.beginPath();
   text5.arc(radius, radius, radius, 0, 2 * Math.PI, false);
   text5.closePath();
@@ -348,10 +353,18 @@ function drawSmileyFace() {
   text5.stroke();
 
   text5.beginPath();
-  text5.arc(eyes_position2, eyes_position2, eyes, 0, 2 * Math.PI, false);
+  text5.arc(eyes_position2, eyes_position1, eyes, 0, 2 * Math.PI, false);
   text5.closePath();
   text5.stroke();
 
+/*  text5.beginPath();
+  text5.moveTo(smile_position, smile_position);
+  text5.bezierCurveTo(smile_position, smile_position2, smile_position1, smile_position2, smile_position1, smile_position);
+  text5.stroke(); */
+
+  text5.beginPath();
+  text5.arc(smile_position, smile_position, smile_radius, 1.9 * Math.PI, 1.20 * Math.PI, false);
+  text5.stroke();
 }
 
 /*
