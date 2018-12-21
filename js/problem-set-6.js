@@ -386,6 +386,48 @@ function drawSmileyFace() {
  */
 
 function drawStar() {
+  var canvas6 = document.getElementById("canvas6");
+  var ctx = canvas6.getContext("2d");
+  ctx.clearRect(0, 0, canvas6.width, canvas6.height);
+  var radius = prompt("Enter outer radius:");
+  function drawStar(cx, cy, spikes, outerRadius, innerRadius){
+		var rot = Math.PI / 2 * 3;
+		var x = cx;
+		var y = cy;
+		var step = Math.PI / spikes;
+
+		ctx.strokeStyle = "#000";
+		ctx.beginPath();
+		ctx.moveTo(cx, cy - outerRadius) //100 - 30
+
+		for(i = 0; i < spikes; i++){
+			$(".display").append(Math.cos(rot) +" , ")
+			x = cx + Math.cos(rot) * outerRadius;
+			y = cy + Math.sin(rot) * outerRadius;
+			console.log("x : ", x, " y : ", y)
+			ctx.lineTo(x,y);
+			rot += step;
+
+			x = cx + Math.cos(rot) * innerRadius;
+			y = cy + Math.sin(rot) * innerRadius;
+			ctx.lineTo(x,y);
+			rot+= step;
+		}
+
+		ctx.lineTo(cx, cy- outerRadius);
+		ctx.closePath();
+		ctx.lineWidth = 1;
+		ctx.strokeStyle = "blue";
+		ctx.stroke()
+		ctx.beginPath();
+		ctx.arc(cx,cy,2, 0, (Math.PI * 2), true);
+		ctx.fillStyle = "red";
+		ctx.fill()
+		ctx.closePath();
+	}
+
+
+
 
 }
 
@@ -460,5 +502,24 @@ function drawPyramid() {
  */
 
 function drawHouse() {
-
+  var canvas9 = document.getElementById("canvas9");
+  var text9 = canvas9.getContext("2d");
+  text9.clearRect(0, 0, canvas9.width, canvas9.height);
+  var color = prompt("What color would you like your rectangle to be?");
+  color = color.toLowerCase();
+  console.log(color);
+  console.log(typeof color);
+  console.log(typeof "black");
+  let value = -1;
+  if (!(color == "black" || color == "blue" || color == "green" || color == "orange" || color == "purple" || color == "red" || color == "yellow")) {
+    alert(`${color} is not a supported color.`);
+  }
+  else {
+    var bottom_of_house = Number(canvas9.height) - 10
+    var canvas9 = document.getElementById("canvas9");
+    var text9 = canvas9.getContext("2d");
+    text9.fillStyle = color;
+    text9.fillRect(150, 300, bottom_of_house, bottom_of_house);
+    text9.stroke();
+}
 }
