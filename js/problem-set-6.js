@@ -469,7 +469,17 @@ function drawStopSign() {
  */
 
 function drawPyramid() {
-
+  var canvas8 = document.getElementById("canvas8");
+  var text8 = canvas8.getContext("2d");
+  text8.clearRect(0, 0, canvas8.width, canvas8.height);
+  var length = prompt("Length: ");
+  length = Number(length);
+  var x = Number(canvas8.height) - length;
+  var z = length;
+  text8.strokeRect(0, x, length, length);
+  text8.stroke();
+  text8.strokeRect(length, x, length, length);
+  text8.stroke();
 }
 
 /*
@@ -502,6 +512,7 @@ function drawPyramid() {
  */
 
 function drawHouse() {
+  /*Outline for shapes? */
   var canvas9 = document.getElementById("canvas9");
   var text9 = canvas9.getContext("2d");
   text9.clearRect(0, 0, canvas9.width, canvas9.height);
