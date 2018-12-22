@@ -515,11 +515,20 @@ function drawHouse() {
     alert(`${color} is not a supported color.`);
   }
   else {
-    var bottom_of_house = Number(canvas9.height) - 10
+    var bottom_of_house = Number(canvas9.height) - 10;
     var canvas9 = document.getElementById("canvas9");
     var text9 = canvas9.getContext("2d");
     text9.fillStyle = color;
     text9.fillRect(150, 300, bottom_of_house, bottom_of_house);
     text9.stroke();
+    var canvas4 = document.getElementById("canvas4");
+    var text4 = canvas4.getContext("2d");
+    /*Draw the roof: */
+    text9.beginPath();
+      text9.moveTo(500, 0); // pick up "pen," reposition at 500 (horiz), 0 (vert)
+      text9.lineTo(150, 300); // draw straight down by 200px (200 + 200)
+      text9.lineTo(900, 300); // 700 = length, 300 = height.
+      text9.closePath(); // connect end to start
+      text9.stroke(); // outline the shape that's been described
 }
 }
