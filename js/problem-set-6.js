@@ -490,6 +490,17 @@ function drawPyramid() {
   var b = h + length;
   text8.strokeRect(b, x, length, length);
   text8.stroke();
+  /* draw second row of pyramid*/
+  var y = Number(canvas8.height) - (length * 2);
+  var u = length / 2;
+  text8.strokeRect(u, y, length, length);
+  text8.stroke();
+  var n = length * 1.5;
+  text8.strokeRect(n, y, length, length);
+  text8.stroke();
+  var 0 = length;
+  text8.strokeRect(n, y, length, length);
+  text8.stroke();
 }
 
 /*
