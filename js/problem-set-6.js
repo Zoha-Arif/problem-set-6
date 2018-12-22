@@ -476,9 +476,19 @@ function drawPyramid() {
   length = Number(length);
   var x = Number(canvas8.height) - length;
   var z = length;
+  /* draw base of pyramid */
   text8.strokeRect(0, x, length, length);
   text8.stroke();
-  text8.strokeRect(length, x, length, length);
+  text8.strokeRect(z, x, length, length);
+  text8.stroke();
+  var w = z + length;
+  text8.strokeRect(w, x, length, length);
+  text8.stroke();
+  var h = w + length;
+  text8.strokeRect(h, x, length, length);
+  text8.stroke();
+  var b = h + length;
+  text8.strokeRect(b, x, length, length);
   text8.stroke();
 }
 
