@@ -509,10 +509,10 @@ function drawHouse() {
   var color1 = prompt("Front Door Color:");
   color = color.toLowerCase();
   color1 = color1.toLowerCase();
-  if (!(color == "black" || color == "blue" || color == "green" || color == "orange" || color == "purple" || color == "red" || color == "yellow")) {
+  if (!(color == "brown" || color == "blue" || color == "green" || color == "orange" || color == "purple" || color == "red" || color == "yellow")) {
     alert("One of your colors is not supported.");
   }
-  else if (!(color1 == "black" || color1 == "blue" || color1 == "green" || color1 == "orange" || color1 == "purple" || color1 == "red" || color1 == "yellow")) {
+  else if (!(color1 == "brown" || color1 == "blue" || color1 == "green" || color1 == "orange" || color1 == "purple" || color1 == "red" || color1 == "yellow")) {
     alert("One of your colors is not supported.");
   }
   else {
