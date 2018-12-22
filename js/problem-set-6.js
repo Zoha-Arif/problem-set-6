@@ -534,7 +534,7 @@ function drawHouse() {
     text9.stroke();
     /*Draw the front door: */
     text9.fillStyle = color1;
-    text9.fillRect(420, 500, 200, 400);
+    text9.fillRect(450, 600, 130, 200);
     text9.stroke();
     /*Draw window1: */
     text9.fillStyle = "#23E2ED";
@@ -552,5 +552,9 @@ function drawHouse() {
     text9.fillStyle = "#23E2ED";
     text9.fillRect(670, 570, 100, 100);
     text9.stroke();
+    /*Draw door knob: */
+    text9.fillStyle = "gray";
+    text9.arc(555, 680, 10, 0, 2 * Math.PI, false);
+    text9.fill();
 }
 }
