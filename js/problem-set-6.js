@@ -534,7 +534,23 @@ function drawHouse() {
     text9.stroke();
     /*Draw the front door: */
     text9.fillStyle = color1;
-    text9.fillRect(500, 500, 200, 400);
+    text9.fillRect(420, 500, 200, 400);
+    text9.stroke();
+    /*Draw window1: */
+    text9.fillStyle = "#23E2ED";
+    text9.fillRect(250, 370, 100, 100);
+    text9.stroke();
+    /*Draw window2: */
+    text9.fillStyle = "#23E2ED";
+    text9.fillRect(670, 370, 100, 100);
+    text9.stroke();
+    /*Draw window3: */
+    text9.fillStyle = "#23E2ED";
+    text9.fillRect(250, 570, 100, 100);
+    text9.stroke();
+    /*Draw window4: */
+    text9.fillStyle = "#23E2ED";
+    text9.fillRect(670, 570, 100, 100);
     text9.stroke();
 }
 }
