@@ -498,8 +498,11 @@ function drawPyramid() {
   var n = length * 1.5;
   text8.strokeRect(n, y, length, length);
   text8.stroke();
-  var 0 = length;
-  text8.strokeRect(n, y, length, length);
+  var o = length * 2.5;
+  text8.strokeRect(o, y, length, length);
+  text8.stroke();
+  var s = length * 3.5;
+  text8.strokeRect(s, y, length, length);
   text8.stroke();
 }
 
