@@ -504,6 +504,25 @@ function drawPyramid() {
   var s = length * 3.5;
   text8.strokeRect(s, y, length, length);
   text8.stroke();
+  /* draw third row of pyramid*/
+  var k = Number(canvas8.height) - (length * 3);
+  var l = length;
+  text8.strokeRect(l, k, length, length);
+  text8.stroke();
+  var g = length * 2;
+  text8.strokeRect(g, k, length, length);
+  text8.stroke();
+  var lo = length * 3;
+  text8.strokeRect(lo, k, length, length);
+  text8.stroke();
+  /* draw fourth row of pyramid*/
+  var m = Number(canvas8.height) - (length * 4);
+  var bb = length * 1.5;
+  text8.strokeRect(bb, m, length, length);
+  text8.stroke();
+  var gg = length * 2.5;
+  text8.strokeRect(gg, m, length, length);
+  text8.stroke();
 }
 
 /*
