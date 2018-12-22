@@ -523,6 +523,11 @@ function drawPyramid() {
   var gg = length * 2.5;
   text8.strokeRect(gg, m, length, length);
   text8.stroke();
+  /* draw fifth row of pyramid*/
+  var mm = Number(canvas8.height) - (length * 5);
+  var bbb = length * 2;
+  text8.strokeRect(bbb, mm, length, length);
+  text8.stroke();
 }
 
 /*
