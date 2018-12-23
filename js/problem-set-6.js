@@ -387,49 +387,39 @@ function drawSmileyFace() {
 
 function drawStar() {
   var canvas6 = document.getElementById("canvas6");
-  var ctx = canvas6.getContext("2d");
-  ctx.clearRect(0, 0, canvas6.width, canvas6.height);
-  var radius = prompt("Enter outer radius:");
-  function drawStar(cx, cy, spikes, outerRadius, innerRadius){
-		var rot = Math.PI / 2 * 3;
-		var x = cx;
-		var y = cy;
-		var step = Math.PI / spikes;
-
-		ctx.strokeStyle = "#000";
-		ctx.beginPath();
-		ctx.moveTo(cx, cy - outerRadius) //100 - 30
-
-		for(i = 0; i < spikes; i++){
-			$(".display").append(Math.cos(rot) +" , ")
-			x = cx + Math.cos(rot) * outerRadius;
-			y = cy + Math.sin(rot) * outerRadius;
-			console.log("x : ", x, " y : ", y)
-			ctx.lineTo(x,y);
-			rot += step;
-
-			x = cx + Math.cos(rot) * innerRadius;
-			y = cy + Math.sin(rot) * innerRadius;
-			ctx.lineTo(x,y);
-			rot+= step;
-		}
-
-		ctx.lineTo(cx, cy- outerRadius);
-		ctx.closePath();
-		ctx.lineWidth = 1;
-		ctx.strokeStyle = "blue";
-		ctx.stroke()
-		ctx.beginPath();
-		ctx.arc(cx,cy,2, 0, (Math.PI * 2), true);
-		ctx.fillStyle = "red";
-		ctx.fill()
-		ctx.closePath();
-	}
-
-
-
-
-}
+  var text6 = canvas6.getContext("2d");
+  text6.clearRect(0, 0, canvas6.width, canvas6.height);
+  var outer_radius = prompt("Outer radius:");
+  var inner_radius = prompt("Inner radius: ");
+  outer_radius = Number(outer_radius);
+  inner_radius = Number(inner_radius);
+  if (outer_radius <= inner_radius) {
+    alert("Your outer radius must be larger than your inner radius.");
+  }
+  else {
+    var centerx = 150;
+    var centery = 150;
+    var num_points = 5;
+    var angle = Math.PI / num_points;
+    text6.beginPath();
+    text6.arc(centerx, centery, outer_radius, 0, 2 * Math.PI);
+    text6.stroke();
+    text6.beginPath();
+    text6.arc(centerx, centery, inner_radius, 0, 2 * Math.PI);
+    text6.stroke();
+    text6.beginPath();
+    text6.moveTo(centerx, centery);
+    var angle = Math.PI / 5;
+    for (var i = 0; i < 5; i++){
+      var r = (i & 1) == 0 ? outerRadius : innerRadius;
+     var currX = centerX + Math.cos(i * angle) * r;
+     var currY = centerY + Math.sin(i * angle) * r;
+     text6.lineTo(currX, currY);
+     text6.stroke(); 
+    }
+    text6.closePath();
+    }
+  }
 
 /*
  * Stop Sign. 7 points.
