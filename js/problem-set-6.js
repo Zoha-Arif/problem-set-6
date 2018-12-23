@@ -477,17 +477,20 @@ function drawPyramid() {
   var x = Number(canvas8.height) - length;
   var z = length;
   /* draw base of pyramid */
-  if (Number.isInteger(length) == false) {
-      alert("Your input is not a number.");
-    }
+
+  length1 = parseFloat(length);
+  if(isNaN(length1)){
+    alert("Your input is not a number.");
+  }
+
   var height = Number(canvas8.height);
   var width = Number(canvas8.width);
 
-  if (length > height || length >width) {
+  if ((length > 100) || (length > 100)) {
       alert("The pyramid will not fit on the canvas.");
   }
-  
-  else if (length <= height && length <= width) {
+
+  else if ((length <= 100) && (length <= 100)) {
   text8.strokeRect(0, x, length, length);
   text8.stroke();
   text8.strokeRect(z, x, length, length);
