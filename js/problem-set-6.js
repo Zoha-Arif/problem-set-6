@@ -451,7 +451,7 @@ function drawStopSign() {
   var text7 = canvas7.getContext("2d");
   text7.clearRect(0, 0, canvas7.width, canvas7.height);
   var numberOfSides = 8;
-  var side_length = 80;
+  var side_length = 100;
   var Xcenter = 150;
   var Ycenter = 80;
     text7.rotate(22 * Math.PI/180);
@@ -467,6 +467,10 @@ function drawStopSign() {
     text7.fillStyle = "red";
     text7.fill();
     text7.stroke();
+    text7.rotate(-22 * Math.PI/180);
+    text7.fillStyle = "white";
+    text7.font = "60px Arial";
+    text7.fillText("STOP", 32, 150);
 
 }
 
