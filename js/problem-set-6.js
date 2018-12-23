@@ -447,7 +447,9 @@ function drawStar() {
  */
 
 function drawStopSign() {
-
+  var canvas7 = document.getElementById("canvas7");
+  var text7 = canvas7.getContext("2d");
+  text7.clearRect(0, 0, canvas7.width, canvas7.height);
 }
 
 /*
