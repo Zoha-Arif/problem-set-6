@@ -408,16 +408,28 @@ function drawStar() {
     text6.arc(centerx, centery, inner_radius, 0, 2 * Math.PI);
     text6.stroke();
     text6.beginPath();
-    text6.moveTo(centerx, centery);
+    text6.moveTo(100, 100);
+    var length = 10;
     var angle = Math.PI / 5;
-    for (var i = 0; i < 5; i++){
-      var r = (i & 1) == 0 ? outerRadius : innerRadius;
-     var currX = centerX + Math.cos(i * angle) * r;
-     var currY = centerY + Math.sin(i * angle) * r;
-     text6.lineTo(currX, currY);
-     text6.stroke(); 
-    }
-    text6.closePath();
+	  var rot= Math.PI/2*3;
+    var step = Math.PI/5;
+	  text6.strokeSyle="#000";
+	  text6.beginPath();
+	  text6.moveTo(150,(150 - outer_radius));
+	for(i=0;i<5;i++){
+		var x = 150 +Math.cos(rot)*outer_radius;
+		var y = 150 +Math.sin(rot)*outer_radius;
+		text6.lineTo(x,y)
+		rot += step
+		x=150 + Math.cos(rot)* inner_radius;
+		y=150 + Math.sin(rot)* inner_radius;
+		text6.lineTo(x,y)
+		rot+=step
+
+	}
+	text6.lineTo(150, (150 - outer_radius))
+	text6.stroke();
+	text6.closePath();
     }
   }
 
