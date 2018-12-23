@@ -450,6 +450,24 @@ function drawStopSign() {
   var canvas7 = document.getElementById("canvas7");
   var text7 = canvas7.getContext("2d");
   text7.clearRect(0, 0, canvas7.width, canvas7.height);
+  var numberOfSides = 8;
+  var size = 100;
+  var Xcenter = 150;
+  var Ycenter = 80;
+    text7.rotate(22 * Math.PI/180);
+    text7.beginPath();
+    text7.moveTo (Xcenter +  size * Math.cos(0), Ycenter +  size *  Math.sin(0));
+
+    for (var i = 1; i <= numberOfSides; i += 1)
+    {
+        text7.lineTo (Xcenter + size * Math.cos(i * 2 * Math.PI / numberOfSides), Ycenter + size * Math.sin(i * 2 * Math.PI / numberOfSides));
+    }
+    text7.strokeStyle = "#000000";
+    text7.lineWidth = 1;
+    text7.fillStyle = "red";
+    text7.fill();
+    text7.stroke();
+
 }
 
 /*
