@@ -401,12 +401,12 @@ function drawStar() {
     var centery = 150;
     var num_points = 5;
     var angle = Math.PI / num_points;
-    text6.beginPath();
+    /* text6.beginPath();
     text6.arc(centerx, centery, outer_radius, 0, 2 * Math.PI);
     text6.stroke();
     text6.beginPath();
     text6.arc(centerx, centery, inner_radius, 0, 2 * Math.PI);
-    text6.stroke();
+    text6.stroke(); */
     text6.beginPath();
     text6.moveTo(100, 100);
     var length = 10;
@@ -417,8 +417,8 @@ function drawStar() {
 	  text6.beginPath();
 	  text6.moveTo(150,(150 - outer_radius));
 	for(i=0;i<5;i++){
-		var x = 150 +Math.cos(rot)*outer_radius;
-		var y = 150 +Math.sin(rot)*outer_radius;
+		var x = 150 + Math.cos(rot)*outer_radius;
+		var y = 150 + Math.sin(rot)*outer_radius;
 		text6.lineTo(x,y)
 		rot += step
 		x=150 + Math.cos(rot)* inner_radius;
